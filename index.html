@@ -340,5 +340,20 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
             });
             
             
-;</script>	</body>
+;</script>	
+<script>
+    var urlBackRedirect = 'https://videosepix.com/rmkt'; // lembre-se de usar a url sem espaços
+    // não altere nada abaixo dessa linha
+    urlBackRedirect = urlBackRedirect = urlBackRedirect.trim() +
+            (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') +
+            document.location.search.replace('?', '').toString();
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.onpopstate = function () {
+        setTimeout(function () {
+            location.href = urlBackRedirect;
+        }, 1);
+    };
+</script>
+</body>
 </html>
